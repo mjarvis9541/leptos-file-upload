@@ -1,0 +1,9 @@
+.vscode/
+**/*.rs.bk
+/target/
+end2end/playwright-report/
+node_modules/
+pkg
+playwright/.cache/
+public/static/*
+test-results/
