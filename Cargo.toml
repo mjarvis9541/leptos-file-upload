@@ -33,6 +33,7 @@ web-sys = { version = "0.3.69", features = [
 chrono = "0.4.38"
 uuid = { version = "1.9.1", features = ["v4"] }
 
+
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
 ssr = [
@@ -67,9 +68,9 @@ site-root = "target/site"
 site-pkg-dir = "pkg"
 
 # [Optional] The source CSS file. If it ends with .sass or .scss then it will be compiled by dart-sass into CSS. The CSS is optimized by Lightning CSS before being written to <site-root>/<site-pkg>/app.css
-style-file = "style/tailwind.css"
+# style-file = "style/tailwind.css"
 tailwind-input-file = "style/tailwind.css"
-tailwind-config-file = "tailwind.config.js"
+# tailwind-config-file = "tailwind.config.js"
 # Assets source dir. All files found here will be copied and synchronized to site-root.
 # The assets-dir cannot have a sub directory with the same name/path as site-pkg-dir.
 #

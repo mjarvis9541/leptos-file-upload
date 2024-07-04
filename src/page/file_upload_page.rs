@@ -17,9 +17,8 @@ pub async fn upload_file_action(data: MultipartData) -> Result<(), ServerFnError
     let mut data = data.into_inner().unwrap();
 
     let current_dir = env::current_dir().map_err(|e| ServerFnError::new(e.to_string()))?;
-    leptos::logging::log!("{:?}", &current_dir);
-
     let upload_dir = current_dir.join("public/static/images");
+
     if !upload_dir.exists() {
         std::fs::create_dir_all(upload_dir.clone())
             .map_err(|e| ServerFnError::new(e.to_string()))?;
@@ -62,9 +61,7 @@ pub fn FileUploadPage() -> impl IntoView {
     let on_submit = move |ev: SubmitEvent| {
         ev.prevent_default();
         let target = ev.target().unwrap().unchecked_into::<HtmlFormElement>();
-        leptos::logging::log!("target: {:?}", &target);
         let form_data = FormData::new_with_form(&target).unwrap();
-        leptos::logging::log!("form_data: {:?}", &form_data);
         upload_action.dispatch(form_data);
     };
 
